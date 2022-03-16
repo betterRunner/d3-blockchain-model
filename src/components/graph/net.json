@@ -1,0 +1,794 @@
+{
+  "ccs": [
+    {
+      "cc_name": "fabcar",
+      "cc_version": "1",
+      "channel_id": "testchannel",
+      "channel_name": "testchannel",
+      "endorsement_policy": "AND('scftest-audit.member','scftest-corecompany.member')",
+      "id": "fabcar[1]@testchannel",
+      "name": "fabcar[1]",
+      "peer_list": [
+        "peer0.scftest-gateway"
+      ],
+      "private_data_policy": [],
+      "status": "RUNNING"
+    },
+    {
+      "cc_name": "transcc",
+      "cc_version": "56",
+      "channel_id": "txchannel",
+      "channel_name": "txchannel",
+      "endorsement_policy": "AND('scftest-audit.member','scftest-corecompany.member')",
+      "id": "transcc[56]@txchannel",
+      "name": "transcc[56]",
+      "peer_list": [
+        "peer0.scftest-supply2",
+        "peer0.scftest-supply3"
+      ],
+      "private_data_policy": [
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 6,
+          "name": "TODO",
+          "orgnames": [
+            "scftest-gateway",
+            "scftest-supply1",
+            "scftest-supply2",
+            "scftest-audit",
+            "scftest-bank",
+            "scftest-corecompany"
+          ],
+          "required_peer_count": 3
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 3,
+          "name": "BASE_scftest-bank",
+          "orgnames": ["scftest-bank", "scftest-audit", "scftest-gateway"],
+          "required_peer_count": 3
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 3,
+          "name": "BASE_scftest-corecompany",
+          "orgnames": [
+            "scftest-corecompany",
+            "scftest-gateway",
+            "scftest-audit"
+          ],
+          "required_peer_count": 3
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 2,
+          "name": "BASE_scftest-gateway",
+          "orgnames": ["scftest-gateway", "scftest-audit"],
+          "required_peer_count": 2
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 3,
+          "name": "BASE_scftest-supply1",
+          "orgnames": ["scftest-supply1", "scftest-audit", "scftest-gateway"],
+          "required_peer_count": 3
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 3,
+          "name": "BASE_scftest-supply2",
+          "orgnames": ["scftest-supply2", "scftest-gateway", "scftest-audit"],
+          "required_peer_count": 3
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 4,
+          "name": "ASSET_scftest-corecompany_scftest-supply1",
+          "orgnames": [
+            "scftest-corecompany",
+            "scftest-audit",
+            "scftest-gateway",
+            "scftest-supply1"
+          ],
+          "required_peer_count": 4
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 4,
+          "name": "ASSET_scftest-corecompany_scftest-supply2",
+          "orgnames": [
+            "scftest-supply2",
+            "scftest-corecompany",
+            "scftest-gateway",
+            "scftest-audit"
+          ],
+          "required_peer_count": 4
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 4,
+          "name": "ASSET_scftest-bank_scftest-corecompany",
+          "orgnames": [
+            "scftest-bank",
+            "scftest-corecompany",
+            "scftest-gateway",
+            "scftest-audit"
+          ],
+          "required_peer_count": 4
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 4,
+          "name": "TX_scftest-corecompany_scftest-supply1",
+          "orgnames": [
+            "scftest-supply1",
+            "scftest-corecompany",
+            "scftest-gateway",
+            "scftest-audit"
+          ],
+          "required_peer_count": 4
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 4,
+          "name": "TX_scftest-corecompany_scftest-supply2",
+          "orgnames": [
+            "scftest-supply2",
+            "scftest-corecompany",
+            "scftest-gateway",
+            "scftest-audit"
+          ],
+          "required_peer_count": 4
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 4,
+          "name": "TX_scftest-bank_scftest-corecompany",
+          "orgnames": [
+            "scftest-corecompany",
+            "scftest-gateway",
+            "scftest-audit",
+            "scftest-bank"
+          ],
+          "required_peer_count": 4
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 5,
+          "name": "TX_scftest-corecompany_scftest-supply1_scftest-supply2",
+          "orgnames": [
+            "scftest-gateway",
+            "scftest-corecompany",
+            "scftest-audit",
+            "scftest-supply2",
+            "scftest-supply1"
+          ],
+          "required_peer_count": 5
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 5,
+          "name": "TX_scftest-bank_scftest-corecompany_scftest-supply1",
+          "orgnames": [
+            "scftest-gateway",
+            "scftest-corecompany",
+            "scftest-bank",
+            "scftest-supply1",
+            "scftest-audit"
+          ],
+          "required_peer_count": 5
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 5,
+          "name": "TX_scftest-bank_scftest-corecompany_scftest-supply2",
+          "orgnames": [
+            "scftest-gateway",
+            "scftest-corecompany",
+            "scftest-bank",
+            "scftest-audit",
+            "scftest-supply2"
+          ],
+          "required_peer_count": 5
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 3,
+          "name": "BASE_scftest-supply3",
+          "orgnames": ["scftest-supply3", "scftest-audit", "scftest-gateway"],
+          "required_peer_count": 3
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 4,
+          "name": "ASSET_scftest-corecompany_scftest-supply3",
+          "orgnames": [
+            "scftest-supply3",
+            "scftest-corecompany",
+            "scftest-audit",
+            "scftest-gateway"
+          ],
+          "required_peer_count": 4
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 4,
+          "name": "TX_scftest-corecompany_scftest-supply3",
+          "orgnames": [
+            "scftest-supply3",
+            "scftest-gateway",
+            "scftest-corecompany",
+            "scftest-audit"
+          ],
+          "required_peer_count": 4
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 5,
+          "name": "TX_scftest-corecompany_scftest-supply1_scftest-supply3",
+          "orgnames": [
+            "scftest-supply3",
+            "scftest-supply1",
+            "scftest-audit",
+            "scftest-corecompany",
+            "scftest-gateway"
+          ],
+          "required_peer_count": 5
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 5,
+          "name": "TX_scftest-corecompany_scftest-supply2_scftest-supply3",
+          "orgnames": [
+            "scftest-supply2",
+            "scftest-supply3",
+            "scftest-audit",
+            "scftest-corecompany",
+            "scftest-gateway"
+          ],
+          "required_peer_count": 5
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 5,
+          "name": "TX_scftest-bank_scftest-corecompany_scftest-supply3",
+          "orgnames": [
+            "scftest-bank",
+            "scftest-supply3",
+            "scftest-audit",
+            "scftest-corecompany",
+            "scftest-gateway"
+          ],
+          "required_peer_count": 5
+        }
+      ],
+      "status": "RUNNING"
+    },
+    {
+      "cc_name": "fabcar",
+      "cc_version": "1.0.0",
+      "channel_id": "sharechannel",
+      "channel_name": "sharechannel",
+      "endorsement_policy": "OR('scftest-audit.member','scftest-bank.member','scftest-corecompany.member','scftest-gateway.member','scftest-supply1.member','scftest-supply2.member')",
+      "id": "fabcar[1.0.0]@sharechannel",
+      "name": "fabcar[1.0.0]",
+      "peer_list": [
+        "peer0.scftest-gateway",
+        "peer0.scftest-supply1"
+      ],
+      "private_data_policy": [],
+      "status": "RUNNING"
+    },
+    {
+      "cc_name": "sharecc",
+      "cc_version": "2",
+      "channel_id": "testchannel",
+      "channel_name": "testchannel",
+      "endorsement_policy": "OR('scftest-audit.member','scftest-corecompany.member','scftest-gateway.member')",
+      "id": "sharecc[2]@testchannel",
+      "name": "sharecc[2]",
+      "peer_list": [
+        "peer0.scftest-corecompany"
+      ],
+      "private_data_policy": [],
+      "status": "RUNNING"
+    },
+    {
+      "cc_name": "kz-cctest1",
+      "cc_version": "v1",
+      "channel_id": "sharechannel",
+      "channel_name": "sharechannel",
+      "endorsement_policy": "OR('scftest-audit.member','scftest-bank.member','scftest-corecompany.member','scftest-gateway.member','scftest-supply1.member','scftest-supply2.member')",
+      "id": "kz-cctest1[v1]@sharechannel",
+      "name": "kz-cctest1[v1]",
+      "peer_list": [
+        "peer0.scftest-bank",
+        "peer0.scftest-corecompany"
+      ],
+      "private_data_policy": [],
+      "status": "RUNNING"
+    },
+    {
+      "cc_name": "sharecc",
+      "cc_version": "64",
+      "channel_id": "sharechannel",
+      "channel_name": "sharechannel",
+      "endorsement_policy": "AND('scftest-audit.member','scftest-gateway.member')",
+      "id": "sharecc[64]@sharechannel",
+      "name": "sharecc[64]",
+      "peer_list": [
+        "peer0.scftest-supply1",
+        "peer0.scftest-supply2"
+      ],
+      "private_data_policy": [
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 8,
+          "name": "TODO",
+          "orgnames": [
+            "scftest-corecompany",
+            "scftest-gateway",
+            "scftest-supply1",
+            "scftest-supply2",
+            "scftest-audit",
+            "scftest-bank"
+          ],
+          "required_peer_count": 3
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 2,
+          "name": "BASE_scftest-audit",
+          "orgnames": ["scftest-audit", "scftest-gateway"],
+          "required_peer_count": 2
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 3,
+          "name": "BASE_scftest-bank",
+          "orgnames": ["scftest-bank", "scftest-gateway", "scftest-audit"],
+          "required_peer_count": 3
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 3,
+          "name": "BASE_scftest-corecompany",
+          "orgnames": [
+            "scftest-corecompany",
+            "scftest-gateway",
+            "scftest-audit"
+          ],
+          "required_peer_count": 3
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 2,
+          "name": "BASE_scftest-gateway",
+          "orgnames": ["scftest-gateway", "scftest-audit"],
+          "required_peer_count": 2
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 3,
+          "name": "BASE_scftest-supply1",
+          "orgnames": ["scftest-supply1", "scftest-audit", "scftest-gateway"],
+          "required_peer_count": 3
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 3,
+          "name": "BASE_scftest-supply2",
+          "orgnames": ["scftest-supply2", "scftest-audit", "scftest-gateway"],
+          "required_peer_count": 3
+        },
+        {
+          "auth_type": "ASSIGN",
+          "block_to_live": 0,
+          "max_peer_count": 3,
+          "name": "BASE_scftest-supply3",
+          "orgnames": ["scftest-supply3", "scftest-audit", "scftest-gateway"],
+          "required_peer_count": 3
+        }
+      ],
+      "status": "RUNNING"
+    },
+    {
+      "cc_name": "zhangcc",
+      "cc_version": "1",
+      "channel_id": "testchannel",
+      "channel_name": "testchannel",
+      "endorsement_policy": "AND('scftest-audit.member','scftest-corecompany.member')",
+      "id": "zhangcc[1]@testchannel",
+      "name": "zhangcc[1]",
+      "peer_list": [
+        "peer0.scftest-audit",
+        "peer0.scftest-corecompany"
+      ],
+      "private_data_policy": [],
+      "status": "RUNNING"
+    },
+    {
+      "cc_name": "fabcar",
+      "cc_version": "v1.0.0",
+      "channel_id": "txchannel",
+      "channel_name": "txchannel",
+      "endorsement_policy": "OR('scftest-audit.member','scftest-bank.member','scftest-corecompany.member','scftest-gateway.member','scftest-supply1.member','scftest-supply2.member','scftest-supply3.member')",
+      "id": "fabcar[v1.0.0]@txchannel",
+      "name": "fabcar[v1.0.0]",
+      "peer_list": [
+        "peer0.scftest-corecompany",
+        "peer0.scftest-gateway",
+        "peer0.scftest-supply1"
+      ],
+      "private_data_policy": [],
+      "status": "RUNNING"
+    }
+  ],
+  "channels": [
+    {
+      "block_height": 19,
+      "cc_list": [
+        "fabcar[1]@testchannel",
+        "sharecc[2]@testchannel",
+        "zhangcc[1]@testchannel"
+      ],
+      "channel_name": "testchannel",
+      "config_data": {
+        "absolute_max_bytes": 103809024,
+        "batch_timeout": "1s",
+        "channel_name": "testchannel",
+        "max_message_count": 10,
+        "policy": {
+          "admins": "MAJORITY Admins",
+          "readers": "ANY Readers",
+          "writers": "ANY Writers"
+        },
+        "preferred_max_bytes": 524288
+      },
+      "id": "testchannel",
+      "name": "testchannel",
+      "org_list": [
+        "scftest-audit",
+        "scftest-corecompany",
+        "scftest-gateway",
+        "fengsibo-forg2"
+      ],
+      "peer_list": [
+        "peer0.scftest-gateway",
+        "peer0.fengsibo-forg2",
+        "peer0.scftest-audit",
+        "peer0.scftest-corecompany"
+      ]
+    },
+    {
+      "block_height": 424,
+      "cc_list": [
+        "fabcar[1.0.0]@sharechannel",
+        "kz-cctest1[v1]@sharechannel",
+        "sharecc[64]@sharechannel"
+      ],
+      "channel_name": "sharechannel",
+      "config_data": {
+        "absolute_max_bytes": 103809024,
+        "batch_timeout": "1s",
+        "channel_name": "sharechannel",
+        "max_message_count": 10,
+        "policy": {
+          "admins": "MAJORITY Admins",
+          "readers": "ANY Readers",
+          "writers": "ANY Writers"
+        },
+        "preferred_max_bytes": 524288
+      },
+      "id": "sharechannel",
+      "name": "sharechannel",
+      "org_list": [
+        "scftest-supply2",
+        "scftest-supply3",
+        "scftest-audit",
+        "scftest-bank",
+        "scftest-corecompany",
+        "scftest-gateway",
+        "scftest-supply1"
+      ],
+      "peer_list": [
+        "peer0.scftest-gateway",
+        "peer0.scftest-supply1",
+        "peer0.scftest-supply2",
+        "peer0.scftest-supply3",
+        "peer0.scftest-audit",
+        "peer0.scftest-bank",
+        "peer0.scftest-corecompany"
+      ]
+    },
+    {
+      "block_height": 240,
+      "cc_list": ["fabcar[v1.0.0]@txchannel", "transcc[56]@txchannel"],
+      "channel_name": "txchannel",
+      "config_data": {
+        "absolute_max_bytes": 103809024,
+        "batch_timeout": "1s",
+        "channel_name": "txchannel",
+        "max_message_count": 10,
+        "policy": {
+          "admins": "MAJORITY Admins",
+          "readers": "ANY Readers",
+          "writers": "ANY Writers"
+        },
+        "preferred_max_bytes": 524288
+      },
+      "id": "txchannel",
+      "name": "txchannel",
+      "org_list": [
+        "scftest-supply2",
+        "scftest-supply3",
+        "scftest-audit",
+        "scftest-bank",
+        "scftest-corecompany",
+        "scftest-gateway",
+        "scftest-supply1"
+      ],
+      "peer_list": [
+        "peer0.scftest-supply2",
+        "peer0.scftest-supply3",
+        "peer0.scftest-audit",
+        "peer0.scftest-bank",
+        "peer0.scftest-corecompany",
+        "peer0.scftest-gateway",
+        "peer0.scftest-supply1"
+      ]
+    }
+  ],
+  "consensus_type": "RAFT",
+  "id": "111789447706071040",
+  "name": "scf-network",
+  "network_name": "scf-network",
+  "nodes": [
+    {
+      "cc_list": [
+        "fabcar[1.0.0]@sharechannel"
+      ],
+      "channel_list": ["sharechannel", "txchannel"],
+      "current_version": "hyperledger/fabric-peer:1.4.4",
+      "id": "peer0.scftest-supply2",
+      "image": "hyperledger/fabric-peer:1.4.4",
+      "name": "peer0.scftest-supply2",
+      "node_domain": "peer0.scftest-supply2",
+      "node_type": "PEER",
+      "org_id": "scftest-supply2",
+      "org_name": "scftest-supply2",
+      "status": "RUNNING"
+    },
+    {
+      "cc_list": [
+        "fabcar[1]@testchannel",
+        "transcc[56]@txchannel"
+      ],
+      "channel_list": ["testchannel", "sharechannel", "txchannel"],
+      "current_version": "hyperledger/fabric-peer:1.4.4",
+      "id": "peer0.scftest-audit",
+      "image": "hyperledger/fabric-peer:1.4.4",
+      "name": "peer0.scftest-audit",
+      "node_domain": "peer0.scftest-audit",
+      "node_type": "PEER",
+      "org_id": "scftest-audit",
+      "org_name": "scftest-audit",
+      "status": "RUNNING"
+    },
+    {
+      "cc_list": [
+        "fabcar[1.0.0]@sharechannel",
+        "kz-cctest1[v1]@sharechannel"
+      ],
+      "channel_list": ["sharechannel", "txchannel"],
+      "current_version": "",
+      "id": "peer0.scftest-supply3",
+      "image": "",
+      "name": "peer0.scftest-supply3",
+      "node_domain": "peer0.scftest-supply3",
+      "node_type": "PEER",
+      "org_id": "scftest-supply3",
+      "org_name": "scftest-supply3",
+      "status": "RUNNING"
+    },
+    {
+      "cc_list": [],
+      "channel_list": [],
+      "current_version": "hyperledger/fabric-orderer:1.4.4",
+      "id": "orderer0.scftest-orderer",
+      "image": "hyperledger/fabric-orderer:1.4.4",
+      "name": "orderer0.scftest-orderer",
+      "node_domain": "orderer0.scftest-orderer",
+      "node_type": "ORDERER",
+      "org_id": "scftest-orderer",
+      "org_name": "scftest-orderer",
+      "status": "RUNNING"
+    },
+    {
+      "cc_list": [
+        "transcc[56]@txchannel"
+      ],
+      "channel_list": ["sharechannel", "txchannel"],
+      "current_version": "hyperledger/fabric-peer:1.4.4",
+      "id": "peer0.scftest-supply1",
+      "image": "hyperledger/fabric-peer:1.4.4",
+      "name": "peer0.scftest-supply1",
+      "node_domain": "peer0.scftest-supply1",
+      "node_type": "PEER",
+      "org_id": "scftest-supply1",
+      "org_name": "scftest-supply1",
+      "status": "RUNNING"
+    },
+    {
+      "cc_list": [
+        "zhangcc[1]@testchannel"
+      ],
+      "channel_list": ["testchannel"],
+      "id": "peer0.fengsibo-forg2",
+      "name": "peer0.fengsibo-forg2",
+      "node_domain": "peer0.fengsibo-forg2",
+      "node_type": "PEER",
+      "org_id": "fengsibo-forg2",
+      "org_name": "fengsibo-forg2",
+      "status": "RUNNING"
+    },
+    {
+      "cc_list": [
+        "fabcar[1]@testchannel",
+        "sharecc[2]@testchannel"
+      ],
+      "channel_list": ["testchannel", "sharechannel", "txchannel"],
+      "current_version": "hyperledger/fabric-peer:1.4.4",
+      "id": "peer0.scftest-gateway",
+      "image": "hyperledger/fabric-peer:1.4.4",
+      "name": "peer0.scftest-gateway",
+      "node_domain": "peer0.scftest-gateway",
+      "node_type": "PEER",
+      "org_id": "scftest-gateway",
+      "org_name": "scftest-gateway",
+      "status": "RUNNING"
+    },
+    {
+      "cc_list": [
+        "fabcar[1.0.0]@sharechannel",
+        "kz-cctest1[v1]@sharechannel"
+      ],
+      "channel_list": ["sharechannel", "txchannel"],
+      "current_version": "hyperledger/fabric-peer:1.4.4",
+      "id": "peer0.scftest-bank",
+      "image": "hyperledger/fabric-peer:1.4.4",
+      "name": "peer0.scftest-bank",
+      "node_domain": "peer0.scftest-bank",
+      "node_type": "PEER",
+      "org_id": "scftest-bank",
+      "org_name": "scftest-bank",
+      "status": "RUNNING"
+    },
+    {
+      "cc_list": [
+        "fabcar[1]@testchannel"
+      ],
+      "channel_list": ["testchannel", "sharechannel", "txchannel"],
+      "current_version": "hyperledger/fabric-peer:1.4.4",
+      "id": "peer0.scftest-corecompany",
+      "image": "hyperledger/fabric-peer:1.4.4",
+      "name": "peer0.scftest-corecompany",
+      "node_domain": "peer0.scftest-corecompany",
+      "node_type": "PEER",
+      "org_id": "scftest-corecompany",
+      "org_name": "scftest-corecompany",
+      "status": "RUNNING"
+    }
+  ],
+  "orgs": [
+    {
+      "ca_domain": "ca.scftest-audit",
+      "channel_list": ["testchannel", "sharechannel", "txchannel"],
+      "id": "scftest-audit",
+      "name": "scftest-audit",
+      "node_list": ["peer0.scftest-audit"],
+      "org_name": "scftest-audit",
+      "tlsca_domain": "tlsca.scftest-audit"
+    },
+    {
+      "ca_domain": "ca.scftest-bank",
+      "channel_list": ["sharechannel", "txchannel"],
+      "id": "scftest-bank",
+      "name": "scftest-bank",
+      "node_list": ["peer0.scftest-bank"],
+      "org_name": "scftest-bank",
+      "tlsca_domain": "tlsca.scftest-bank"
+    },
+    {
+      "ca_domain": "ca.scftest-supply3",
+      "channel_list": ["sharechannel", "txchannel"],
+      "id": "scftest-supply3",
+      "name": "scftest-supply3",
+      "node_list": ["peer0.scftest-supply3"],
+      "org_name": "scftest-supply3",
+      "tlsca_domain": "tlsca.scftest-supply3"
+    },
+    {
+      "ca_domain": "ca.scftest-supply2",
+      "channel_list": ["sharechannel", "txchannel"],
+      "id": "scftest-supply2",
+      "name": "scftest-supply2",
+      "node_list": ["peer0.scftest-supply2"],
+      "org_name": "scftest-supply2",
+      "tlsca_domain": "tlsca.scftest-supply2"
+    },
+    {
+      "ca_domain": "ca.scftest-supply1",
+      "channel_list": ["sharechannel", "txchannel"],
+      "id": "scftest-supply1",
+      "name": "scftest-supply1",
+      "node_list": ["peer0.scftest-supply1"],
+      "org_name": "scftest-supply1",
+      "tlsca_domain": "tlsca.scftest-supply1"
+    },
+    {
+      "ca_domain": "ca.fengsibo-forg2",
+      "channel_list": ["testchannel"],
+      "id": "fengsibo-forg2",
+      "name": "fengsibo-forg2",
+      "node_list": ["peer0.fengsibo-forg2"],
+      "org_name": "fengsibo-forg2",
+      "tlsca_domain": "tlsca.fengsibo-forg2"
+    },
+    {
+      "ca_domain": "ca.scftest-gateway",
+      "channel_list": ["testchannel", "sharechannel", "txchannel"],
+      "id": "scftest-gateway",
+      "name": "scftest-gateway",
+      "node_list": ["peer0.scftest-gateway"],
+      "org_name": "scftest-gateway",
+      "tlsca_domain": "tlsca.scftest-gateway"
+    },
+    {
+      "ca_domain": "ca.scftest-corecompany",
+      "channel_list": ["testchannel", "sharechannel", "txchannel"],
+      "id": "scftest-corecompany",
+      "name": "scftest-corecompany",
+      "node_list": ["peer0.scftest-corecompany"],
+      "org_name": "scftest-corecompany",
+      "tlsca_domain": "tlsca.scftest-corecompany"
+    },
+    {
+      "ca_domain": "ca.scftest-orderer",
+      "channel_list": [],
+      "id": "scftest-orderer",
+      "name": "scftest-orderer",
+      "node_list": ["orderer0.scftest-orderer"],
+      "org_name": "scftest-orderer",
+      "tlsca_domain": "tlsca.scftest-orderer"
+    }
+  ]
+}
